@@ -9,10 +9,6 @@ $SUDO rm -rf /usr/local/go && $SUDO tar -C /usr/local -xzf $HOME/go1.23.0.linux-
 rcfile=$HOME/."$(getent passwd $USERNAME | cut -d: -f7 | xargs -I{} basename {} | sed 's/$/rc/')"
 if [[ -e "$rcfile" ]]; then
     if ! command -v go > /dev/null 2>&1 && [[ -z "$(cat $rcfile | grep '/usr/local/go/bin')" ]]; then
-        read -p "Update $rcfile? (y/N): " choice
-        case "$choice" in 
-          y|Y ) echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $rcfile ;;
-          * ) echo "";;
-        esac
+          echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $rcfile
     fi
 fi
