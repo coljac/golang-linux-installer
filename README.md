@@ -2,4 +2,4 @@
 
 Not sure why I couldn't find this somewhere else:
 
-`curl https://raw.githubusercontent.com/coljac/golang-linux-installer/main/install-go.sh | bash`
+`curl -s https://raw.githubusercontent.com/coljac/golang-linux-installer/main/install-go.sh | bash`
